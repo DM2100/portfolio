@@ -1,34 +1,76 @@
-import React from "react";
-import img1 from "../images/IMG_6073 (1).png";
+import { useSpring, animated, config } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
-const AboutMe = () => {
-  const images = [img1];
+const scrollToContact = () => {
+  const contactSection = document.getElementById("ContactMe");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+export const AboutMe = () => {
+  const [ref, inView] = useInView();
+
+  const textAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(100px)",
+    config: config.slow,
+  });
+
+  const imageAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "scale(1)" : "scale(0.8)",
+    config: config.slow,
+  });
+  const downloadPdf = () => {
+    const pdfUrl = process.env.PUBLIC_URL + "/Durak Mustafov-resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.setAttribute("download", "Durak Mustafov-resume.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="container pt-5 section" id="AboutMe">
-      <div className="row justify-content-center align-items-center info-text">
-        <div className="col-md-12 col-lg-6 text-about mb-4">
-          <h1 className="greetings-text text-center my-5"> Greetings!</h1>
-          <br />
-          <h5 className="mx-auto">
-            Hello there! I'm <span>Durak Mustafov</span>, a passionate and
-            freshly graduated front-end developer on a mission to turn
-            imaginative ideas into seamless and engaging digital experiences.
-            <br /> <br />
-            Take a tour of my portfolio to explore some of my latest projects.
-            Each piece reflects not only my technical skills but also my
-            dedication to creating meaningful and impactful user experiences I'm
+    <div className="container my-5 py-5" id="AboutMe" ref={ref}>
+      <div className="row my-5 py-5">
+        <div className="col-lg-6 about-text">
+          <animated.h1
+            className="text-dev text-md-center d-flex align-items-center justify-content-center text-lg-start filled-animation my-2"
+            style={textAnimation}
+          >
+            FRONT-END DEVELOPER.
+          </animated.h1>
+          <animated.h4
+            className="mt-5 text-lg-start text-md-center about-me-text"
+            style={textAnimation}
+          >
+            I'm <span>Durak Mustafov</span>, a passionate and freshly graduated
+            front-end developer on a mission to turn imaginative ideas into
+            seamless and engaging digital experiences. <br /> Take a tour of my
+            portfolio to explore some of my latest projects. <br /> I'm
             currently on the lookout for exciting opportunities to contribute my
-            skills and passion. <br /> <br /> Feel free to reach out. Thank you for
+            skills and passion. <br /> Feel free to reach out. Thank you for
             visiting, and I look forward to the possibility of working together
-            to bring digital visions to life. 🌐✨
-          </h5>
+            to bring digital visions to life.
+          </animated.h4>
+          <button className="contact-btn" onClick={scrollToContact}>
+            Contact Me
+          </button>
+          <button className="download-btn mt-2 mx-1" onClick={downloadPdf}>
+            Download resume
+          </button>
         </div>
-        <div className="col-md-12 col-lg-6 my-image">
-          <img src={img1} alt="" className="rounded-circle img-fluid grayscale-image shadow-on-hover" />
+        <div className="col-lg-6">
+          <animated.img
+            className="my-image img-fluid rounded-circle"
+            src="images/IMG_6073.jpg"
+            alt=""
+            style={imageAnimation}
+          />
         </div>
       </div>
     </div>
   );
 };
-
-export default AboutMe;
