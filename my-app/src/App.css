@@ -176,6 +176,27 @@
     margin-right: 30px;
   }
 }
+
+@media (max-width: 375px) {
+  .about-me-text {
+    text-align: center; 
+  }
+  .text-dev{
+    font-size: 60px;
+  }
+  .ach-text{
+    font-size: 42px;
+  }
+  .arrow-icon{
+    display: none;
+  }
+  .project-text{
+    margin-right: 30px;
+  }
+  .copyright-text{
+    text-align: center;
+  }
+}
 /* ACHIEVEMENT SECTION */
 .ach-text{
   color: #C6DCBA;
@@ -320,18 +341,23 @@ margin-top: 20px;
 
 /* ARROWSCROLL */
 .scroll-arrow {
+  display: block;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 999;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (max-width: 991px) {
+  .scroll-arrow {
+    display: none; 
+  }
 }
 
 /* FOOTER */
