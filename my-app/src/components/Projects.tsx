@@ -18,7 +18,7 @@ export const Projects = () => {
   });
 
   return (
-    <div ref={ref} className="container py-5 my-5 " id="Project">
+    <div ref={ref} className="container pt-5 mt-5 " id="Project">
       <div className="row text-center align-items-center justify-content-center d-flex my-5 modules">
         <animated.div
           className="col-lg-6 order-lg-1 d-flex flex-column align-items-end justify-content-center justify-content-md-start"
@@ -93,7 +93,7 @@ export const Projects = () => {
               </a>
             </animated.div>
             <animated.div className="col-md-6" style={cardAnimation}>
-              <div className="card bg-transparent my-3">
+              <div className="card bg-transparent my-3 py-2">
                 <img
                   className="card-img-top img-fluid"
                   src="images/project2.png"
@@ -122,11 +122,11 @@ export const Projects = () => {
               </a>
             </animated.div>
             <animated.div className="col-md-6" style={cardAnimation}>
-              <div className="card bg-transparent my-3">
+              <div className="card bg-transparent my-3 py-2">
                 <img
                   className="card-img-top img-fluid"
                   src="images/restaurant.png"
-                  alt="Street Artists"
+                  alt="Restaurant"
                   style={{ width: "100%", height: "220px", objectFit: "cover" }}
                 />
               </div>
@@ -149,12 +149,12 @@ export const Projects = () => {
                 View Project
               </a>
             </animated.div>
-            <animated.div className="col-md-12" style={cardAnimation}>
-              <div className="card bg-transparent my-3">
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
                 <img
                   className="card-img-top img-fluid"
                   src="images/krik-project.png"
-                  alt="Street Artists"
+                  alt="KrikProject"
                   style={{ width: "100%", height: "220px", objectFit: "cover" }}
                 />
               </div>
@@ -168,6 +168,39 @@ export const Projects = () => {
               </h5>
               <a
                 href="https://krik-project.vercel.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/calc.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                "CalcSwift" is an innovative iOS calculator application designed
+                to provide users with a seamless, intuitive, and aesthetically
+                pleasing calculation experience. Engineered with a focus on both
+                functionality and user experience, this app aims to become your
+                go-to tool for all your mathematical needs on your iPhone or
+                iPad.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: JavaScript
+              </h5>
+              <a
+                href="https://calc-apple.netlify.app/"
                 target="_blank"
                 className="project-btns text-start btn41-43 btn-42"
                 style={{

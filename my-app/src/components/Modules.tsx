@@ -21,7 +21,7 @@ export const MyModules = () => {
   });
 
   return (
-    <div className="container py-5" id="Achievements">
+    <div className="container pt-5 mt-5" id="Achievements">
       <div className="row text-center align-items-center justify-content-center d-flex my-5 modules">
         <div className="col-lg-6 order-lg-0 d-flex flex-column align-items-center justify-content-center justify-content-md-start" ref={textRef}>
           <animated.div style={textAnimation}>
@@ -35,7 +35,7 @@ export const MyModules = () => {
           </animated.div>
         </div>
         <div className="col-lg-6 order-lg-1" ref={imageRef}>
-          <div className="row justify-content-center justify-content-lg-end">
+          <div className="row">
             {[
               "images/file-type-html.902x1024.png",
               "images/file-type-css.902x1024.png",
@@ -46,12 +46,12 @@ export const MyModules = () => {
               "images/react.1024x911.png",
               "images/1657707878-nextjs_logo.png"
             ].map((src, index) => (
-              <animated.div className="col-md-6" key={index} style={imageAnimation}>
+              <animated.div className="col-md-6 col-6" key={index} style={imageAnimation}>
                 <img
                   className="my-3 ach-img slideAndBounce"
                   src={src}
                   alt=""
-                  style={{ width: "100px", height: "90px" }}
+                  style={{ width: "55px", height: "55px" }}
                 />
               </animated.div>
             ))}

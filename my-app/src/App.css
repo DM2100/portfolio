@@ -1,8 +1,11 @@
 *{
     box-sizing: border-box;
-    background-color: #121212;
 }
-
+.MyApp{
+  background-color: #121212!important;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
 ::-webkit-scrollbar {
   width: 8px; 
 }
@@ -17,10 +20,6 @@
 }
 
 /* NAVBAR */
-.bg-color {
-  border-bottom: 1px solid #fafafa;
-  box-shadow: 0 4px 6px rgba(248, 248, 248, 0.521); /* Add shadow */
-}
 .custom-ml-auto{
   margin-left: auto;
   margin-right: 35px;
@@ -51,17 +50,16 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #fafafa;
+  background-color: #C6DCBA;
   transition: width 0.3s ease, background-color 0.3s ease; /* added background-color transition */
 }
 
-.nav-link.active::after {
-  width: 100%; /* Adjust as needed */
-  background-color: #C6DCBA; /* Change color to #C6DCBA when active */
-}
 
 .navbar-toggler-white {
   border: 2px solid white;
+}
+.navbar-toggler-white .navbar-toggler-icon {
+  color: #ffffff; 
 }
 
 .nav-link:hover::after {
@@ -80,9 +78,8 @@
   letter-spacing: 1.5px;
 }
 .my-image {
-  border-radius: 100px;
+  filter: blur(1px);
   box-shadow: 0 0 20px rgba(234, 229, 229, 0.5); 
-  filter: grayscale(50%); 
 }
 
 .about-me-text span{
@@ -90,6 +87,7 @@
   font-size: 30px;
   color: #C6DCBA;
 }
+
 @keyframes fillAnimation {
   0% {
     color: transparent;
@@ -123,6 +121,7 @@
   border: 1px solid #fafafa;
 }
 .download-btn{
+  background-color: #121212;
   color: #fafafa;
   font-weight: 500;
   border: 1px solid #fafafa;
@@ -146,7 +145,7 @@
   }
   .contact-btn, .download-btn {
     display: block;
-    width: 100%; /* Make buttons fill the width */
+    width: 100%; 
     margin-top: 10px;
   }
   .arrow-icon{
@@ -156,15 +155,16 @@
     margin-right: 160px;
     letter-spacing: 1.4px;
   }
+
 }
 
-@media (max-width: 576px) {
+@media (max-width: 435px) {
   .about-me-text {
-    text-align: center; 
-    
+    text-align: start; 
+    padding: 45px 0px;
   }
   .text-dev{
-    font-size: 68px;
+    font-size: 60px;
   }
   .ach-text{
     font-size: 42px;
@@ -175,6 +175,71 @@
   .project-text{
     margin-right: 30px;
   }
+  .ach-text{
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 415px) {
+  .about-me-text {
+    text-align: start; 
+  }
+  .text-dev{
+    font-size: 60px;
+  }
+  .ach-text{
+    font-size: 42px;
+  }
+  .arrow-icon{
+    display: none;
+  }
+  .project-text{
+    margin-right: 30px;
+  }
+  .copyright-text{
+    text-align: center;
+    font-size: 20px;
+  }
+  .ach-text{
+    font-size: 30px;
+  }
+}
+@media (max-width: 395px) {
+  .about-me-text {
+    text-align: start; 
+  }
+  .text-dev{
+    font-size: 55px;
+  }
+  .ach-text{
+    font-size: 42px;
+  }
+  .arrow-icon{
+    display: none;
+  }
+  .project-text{
+    margin-right: 30px;
+  }
+  .copyright-text{
+    text-align: center;
+    font-size: 20px;
+  }
+  .icon-style{
+    font-size: 60px !important;
+  }
+  .social-icon-facebook{
+   font-size: 55px !important;
+  }
+  .social-icon-linkedin{
+    font-size: 55px !important;
+   }
+   .social-icon-instagram{
+    font-size: 55px !important;
+   }
+   .ach-text{
+    font-size: 30px;
+  }
+
 }
 /* ACHIEVEMENT SECTION */
 .ach-text{
@@ -263,8 +328,9 @@
   color: #C6DCBA;
   letter-spacing: 1.4px;
 }
+
 .icon-style{
-  font-size: 90px;
+  font-size: 70px;
   color: #121212;
   background-color: #fafafa;
   padding: 20px;
@@ -280,23 +346,22 @@ margin-top: 20px;
   height: 100%;
 }
 
-
 .social-icon-facebook {
   text-decoration: none;
   color: #3b5998; 
-  font-size: 90px;
+  font-size: 70px;
   transition: transform 0.3s ease; 
 }
 
 .social-icon-linkedin {
   color: #0e76a8; 
-  font-size: 90px;
+  font-size: 70px;
   transition: transform 0.3s ease;
 }
 
 .social-icon-instagram {
   color: #e4405f; 
-  font-size: 90px;
+  font-size: 70px;
   transition: transform 0.3s ease;
 }
 
@@ -319,25 +384,29 @@ margin-top: 20px;
 }
 
 /* ARROWSCROLL */
+
 .scroll-arrow {
+  display: block;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 999;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (max-width: 991px) {
+  .scroll-arrow {
+    display: none; 
+  }
 }
 
 /* FOOTER */
-.footer-text{
-box-shadow: 0 2px 8px rgba(248, 248, 248, 0.521);
-}
+
 .copyright-text{
   color: #fafafa;
 }

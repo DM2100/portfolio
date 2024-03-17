@@ -33,8 +33,8 @@ export const AboutMe = () => {
   };
 
   return (
-    <div className="container my-5 py-5" id="AboutMe" ref={ref}>
-      <div className="row my-5 py-5">
+    <div className="container mt-5 pt-5" id="AboutMe" ref={ref}>
+      <div className="row mb-0 pb-0 ">
         <div className="col-lg-6 about-text">
           <animated.h1
             className="text-dev text-md-center d-flex align-items-center justify-content-center text-lg-start filled-animation my-2"
@@ -43,7 +43,7 @@ export const AboutMe = () => {
             FRONT-END DEVELOPER.
           </animated.h1>
           <animated.h4
-            className="mt-5 text-lg-start text-md-center about-me-text"
+            className="mt-5 text-lg-start text-md-start about-me-text"
             style={textAnimation}
           >
             I'm <span>Durak Mustafov</span>, a passionate and freshly graduated
@@ -55,16 +55,16 @@ export const AboutMe = () => {
             visiting, and I look forward to the possibility of working together
             to bring digital visions to life.
           </animated.h4>
-          <button className="contact-btn" onClick={scrollToContact}>
+          <button className="contact-btn mx-1 mt-3" onClick={scrollToContact}>
             Contact Me
           </button>
-          <button className="download-btn mt-2 mx-1" onClick={downloadPdf}>
+          <button className="download-btn mt-3 mx-1 mb-0" onClick={downloadPdf}>
             Download resume
           </button>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 mb-0 pb-0">
           <animated.img
-            className="my-image img-fluid rounded-circle"
+            className="my-image img-fluid"
             src="images/IMG_6073.jpg"
             alt=""
             style={imageAnimation}

@@ -50,7 +50,7 @@ export const ContactSection = () => {
   };
   
   return (
-    <div className="container py-5 " ref={contactRef} id="ContactMe">
+    <div className="container pt-5 " ref={contactRef} id="ContactMe">
       <div className="row my-5 py-3">
         <div className="col-lg-6">
           <animated.div
@@ -76,7 +76,7 @@ export const ContactSection = () => {
               <div className="col-lg-4 col-md-4 mb-3">
                 <div className="text-center">
                   <FaFileDownload className="icon-style" />
-                  <button className="download-btn mt-2" onClick={downloadPdf}>
+                  <button className="download-btn mt-2 btn-down-2" onClick={downloadPdf}>
                     Download resume
                   </button>
                 </div>
@@ -92,21 +92,21 @@ export const ContactSection = () => {
             <h1 className="text-center social-media-title my-3 py-3">
               Social Media
             </h1>
-            <div className="text-center mt-4 mx-">
+            <div className="text-center mt-4">
               <a href="https://www.facebook.com/durak.mustafov" target="_blank">
-                <FaFacebook className="social-icon-facebook mx-2" />
+                <FaFacebook className="social-icon-facebook mx-4" />
               </a>
               <a
                 href="https://www.linkedin.com/in/durak-mustafov-827880156/"
                 target="_blank"
               >
-                <FaLinkedin className="social-icon-linkedin mx-2" />
+                <FaLinkedin className="social-icon-linkedin mx-4" />
               </a>
               <a
                 href="https://www.instagram.com/_mustafov/?igsh=MXdoNXR4b2ZxMmdkcA%3D%3D"
                 target="_blank"
               >
-                <FaInstagram className="social-icon-instagram mx-2" />
+                <FaInstagram className="social-icon-instagram mx-4" />
               </a>
             </div>
           </animated.div>

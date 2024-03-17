@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaBars, FaTimes, FaArrowCircleUp } from "react-icons/fa";
 
 const MyNavbar = () => {
   const [currentTime, setCurrentTime] = useState<string>("");
   const [activeLink, setActiveLink] = useState<string>("");
   const [showScrollArrow, setShowScrollArrow] = useState<boolean>(false);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -20,8 +22,21 @@ const MyNavbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setShowScrollArrow(scrollPosition > 0);
+      const position = window.scrollY;
+      setScrollPosition(position);
+
+      // Set active link based on scroll position
+      if (position >= 0 && position < 600) {
+        setActiveLink("AboutMe");
+      } else if (position >= 600 && position < 1200) {
+        setActiveLink("Achievements");
+      } else if (position >= 1200 && position < 1800) {
+        setActiveLink("Project");
+      } else if (position >= 1800) {
+        setActiveLink("ContactMe");
+      }
+
+      setShowScrollArrow(position > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,19 +45,24 @@ const MyNavbar = () => {
     };
   }, []);
 
-  const scrollToAboutSection = () => {
-    const aboutSection = document.getElementById("AboutMe");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleNavItemClick = (link: string) => {
     setActiveLink(link);
+    setIsNavbarOpen(false); // Close the navbar on item click
   };
 
   const handleLogoClick = () => {
     setActiveLink("");
+  };
+
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
   };
 
   return (
@@ -59,18 +79,23 @@ const MyNavbar = () => {
       <Navbar.Toggle
         aria-controls="basic-navbar-nav"
         className="navbar-toggler-white"
-      />
-      <Navbar.Collapse id="basic-navbar-nav">
+        onClick={toggleNavbar}
+      >
+        {isNavbarOpen ? (
+          <FaTimes style={{ fontSize: "24px", color: "white" }} />
+        ) : (
+          <FaBars style={{ fontSize: "24px", color: "white" }} />
+        )}
+      </Navbar.Toggle>
+      <Navbar.Collapse
+        id="basic-navbar-nav"
+        className={isNavbarOpen ? "show" : ""}
+      >
         <Nav className="custom-ml-auto px-5">
           <Nav.Link
             href="#AboutMe"
             className={`about ${activeLink === "AboutMe" ? "active" : ""}`}
             onClick={() => handleNavItemClick("AboutMe")}
-            style={{
-              fontSize: "25px",
-              letterSpacing: "1.3px",
-              color: activeLink === "AboutMe" ? "#C6DCBA" : "#fafafa",
-            }}
           >
             About
           </Nav.Link>
@@ -80,11 +105,6 @@ const MyNavbar = () => {
               activeLink === "Achievements" ? "active" : ""
             }`}
             onClick={() => handleNavItemClick("Achievements")}
-            style={{
-              fontSize: "25px",
-              letterSpacing: "1.3px",
-              color: activeLink === "Achievements" ? "#C6DCBA" : "#fafafa",
-            }}
           >
             Achievements
           </Nav.Link>
@@ -92,11 +112,6 @@ const MyNavbar = () => {
             href="#Project"
             className={`portfolio ${activeLink === "Project" ? "active" : ""}`}
             onClick={() => handleNavItemClick("Project")}
-            style={{
-              fontSize: "25px",
-              letterSpacing: "1.3px",
-              color: activeLink === "Project" ? "#C6DCBA" : "#fafafa",
-            }}
           >
             Project
           </Nav.Link>
@@ -104,18 +119,13 @@ const MyNavbar = () => {
             href="#ContactMe"
             className={`contact ${activeLink === "ContactMe" ? "active" : ""}`}
             onClick={() => handleNavItemClick("ContactMe")}
-            style={{
-              fontSize: "25px",
-              letterSpacing: "1.3px",
-              color: activeLink === "ContactMe" ? "#C6DCBA" : "#fafafa",
-            }}
           >
             Contact
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
       {showScrollArrow && (
-        <div className="scroll-arrow" onClick={scrollToAboutSection}>
+        <div className="scroll-arrow" onClick={scrollToTop}>
           <FaArrowCircleUp
             style={{ fontSize: "30px", backgroundColor: "transparent" }}
           />
