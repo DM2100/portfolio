@@ -183,24 +183,57 @@ export const Projects = () => {
               <div className="card bg-transparent my-3 py-2">
                 <img
                   className="card-img-top img-fluid"
-                  src="images/calc.png"
+                  src="images/planet.png"
                   alt=""
                   style={{ width: "100%", height: "220px", objectFit: "cover" }}
                 />
               </div>
               <p className="text-start mt-2 info-text">
-                "CalcSwift" is an innovative iOS calculator application designed
-                to provide users with a seamless, intuitive, and aesthetically
-                pleasing calculation experience. Engineered with a focus on both
-                functionality and user experience, this app aims to become your
-                go-to tool for all your mathematical needs on your iPhone or
-                iPad.
+                Planet Explorer is an educational app designed to provide users
+                with fascinating facts and detailed information about the
+                planets in our solar system. The app aims to make learning about
+                space engaging and accessible for users of all ages through
+                interactive features and rich multimedia content.
               </p>
               <h5 className="text-start skill-text">
-                Main skill used: JavaScript
+                Main skill used: React.js
               </h5>
               <a
-                href="https://calc-apple.netlify.app/"
+                href="https://planet-facts-task.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/task.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                Multi-Step Form is a productivity app designed to help users
+                manage their tasks, projects, and time more effectively. A key
+                feature of the app is the multi-step process that allows users
+                to choose their subscription plan, whether monthly or annual.
+                This feature enhances user experience by providing a seamless
+                and intuitive way to select the subscription that best suits
+                their needs..
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js
+              </h5>
+              <a
+                href="https://multi-task-form.netlify.app/"
                 target="_blank"
                 className="project-btns text-start btn41-43 btn-42"
                 style={{
