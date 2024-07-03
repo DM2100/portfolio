@@ -241,6 +241,27 @@
   }
 
 }
+
+@media (max-width: 375px) {
+  .about-me-text {
+    text-align: center; 
+  }
+  .text-dev{
+    font-size: 60px;
+  }
+  .ach-text{
+    font-size: 42px;
+  }
+  .arrow-icon{
+    display: none;
+  }
+  .project-text{
+    margin-right: 30px;
+  }
+  .copyright-text{
+    text-align: center;
+  }
+}
 /* ACHIEVEMENT SECTION */
 .ach-text{
   color: #C6DCBA;
