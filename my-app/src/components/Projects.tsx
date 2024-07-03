@@ -245,6 +245,43 @@ export const Projects = () => {
                 View Project
               </a>
             </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/e-commerce-photo.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                Welcome to the E-commerce Website—a modern and user-friendly
+                online shopping platform designed to provide a seamless and
+                secure shopping experience. This project showcases a
+                comprehensive e-commerce solution where users can browse
+                products, access detailed information, and manage their shopping
+                activities. A unique feature of this platform is the integration
+                of Google Authentication, which enables users to sign up and log
+                in to access the shopping functionality. The site is designed to
+                be fully responsive, ensuring a smooth shopping experience on
+                desktops, tablets, and mobile phones.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js , Bootstrap , Google Auth
+              </h5>
+              <a
+                href="https://my-app-auth-e-commerce-one.vercel.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
           </div>
         </div>
       </div>
