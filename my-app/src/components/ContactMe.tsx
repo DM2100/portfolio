@@ -40,10 +40,10 @@ export const ContactSection = () => {
     transform: isVisible ? "translateY(0)" : "translateY(50px)",
   });
   const downloadPdf = () => {
-    const pdfUrl = process.env.PUBLIC_URL + "/Durak Mustafov-resume.pdf";
+    const pdfUrl = process.env.PUBLIC_URL + "/Durak Mustafov.resume.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.setAttribute("download", "Durak Mustafov-resume.pdf");
+    link.setAttribute("download", "Durak Mustafov.resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

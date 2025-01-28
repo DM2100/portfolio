@@ -23,10 +23,10 @@ export const AboutMe = () => {
     config: config.slow,
   });
   const downloadPdf = () => {
-    const pdfUrl = process.env.PUBLIC_URL + "/Durak Mustafov-resume.pdf";
+    const pdfUrl = process.env.PUBLIC_URL + "/Durak Mustafov.resume.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.setAttribute("download", "Durak Mustafov-resume.pdf");
+    link.setAttribute("download", "Durak Mustafov.resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -35,7 +35,7 @@ export const AboutMe = () => {
   return (
     <div className="container mt-5 pt-5" id="AboutMe" ref={ref}>
       <div className="row mb-0 pb-0 ">
-        <div className="col-lg-6 about-text">
+        <div className="col-lg-8 about-text">
           <animated.h1
             className="text-dev text-md-center d-flex align-items-center justify-content-center text-lg-start filled-animation my-2"
             style={textAnimation}
@@ -62,10 +62,10 @@ export const AboutMe = () => {
             Download resume
           </button>
         </div>
-        <div className="col-lg-6 mb-0 pb-0">
+        <div className="col-lg-4 mb-0 pb-0">
           <animated.img
-            className="my-image img-fluid"
-            src="images/IMG_6073.jpg"
+            className="my-image rounded"
+            src="images/3816-0-2.jpg"
             alt=""
             style={imageAnimation}
           />
