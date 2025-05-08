@@ -1,0 +1,292 @@
+import React, { useRef } from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
+
+export const Projects = () => {
+  const [ref, inView] = useInView();
+  const cardAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(50px)",
+    delay: 500,
+  });
+
+  const textAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(-50px)",
+    delay: 500,
+  });
+
+  return (
+    <div ref={ref} className="container pt-5 mt-5 " id="Project">
+      <div className="row text-center align-items-center justify-content-center d-flex my-5 modules">
+        <animated.div
+          className="col-lg-6 order-lg-1 d-flex flex-column align-items-end justify-content-center justify-content-md-start"
+          style={textAnimation}
+        >
+          <h1 className="project-text text-md-center text-center mb-0">
+            Finished Work
+          </h1>
+          <FaArrowLeft
+            className="ms-3 mt-4 arrow-icon"
+            style={{ color: "#C6DCBA", width: "303px", fontSize: "44px" }}
+          />
+        </animated.div>
+        <div className="col-lg-6 order-lg-0 my-4">
+          <div className="row justify-content-center justify-content-lg-start">
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent  my-3">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/music db.png"
+                  alt="Music DB"
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                This project is for music application <br />
+                The design is made for mobile.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js
+              </h5>
+              <a
+                href="https://music-project3.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent  my-3">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/_streetartists.png"
+                  alt="Street Artists"
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                This project is created for street artists The design is made
+                for mobile
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: JavaScript
+              </h5>
+              <a
+                href="https://streetartists2.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/project2.png"
+                  alt="Street Artists"
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                This project is created to build social profiles and gain
+                profits
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: Bootstrap
+              </h5>
+              <a
+                href="https://project-1-fullyresponsive.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/restaurant.png"
+                  alt="Restaurant"
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                This project is created for restaurants The design is responsive
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js{" "}
+              </h5>
+              <a
+                href="https://restaurant-pr.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/krik-project.png"
+                  alt="KrikProject"
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                This project is created for CYA KRIK.KRIK is nonprofitable
+                organisation which is created by young people leaded by young
+                people and work for young people.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: Next.js{" "}
+              </h5>
+              <a
+                href="https://krik-project.vercel.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/planet.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                Planet Explorer is an educational app designed to provide users
+                with fascinating facts and detailed information about the
+                planets in our solar system. The app aims to make learning about
+                space engaging and accessible for users of all ages through
+                interactive features and rich multimedia content.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js
+              </h5>
+              <a
+                href="https://planet-facts-task.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/task.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                Multi-Step Form is a productivity app designed to help users
+                manage their tasks, projects, and time more effectively. A key
+                feature of the app is the multi-step process that allows users
+                to choose their subscription plan, whether monthly or annual.
+                This feature enhances user experience by providing a seamless
+                and intuitive way to select the subscription that best suits
+                their needs..
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js
+              </h5>
+              <a
+                href="https://multi-task-form.netlify.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+            <animated.div className="col-md-6" style={cardAnimation}>
+              <div className="card bg-transparent my-3 py-2">
+                <img
+                  className="card-img-top img-fluid"
+                  src="images/e-commerce-photo.png"
+                  alt=""
+                  style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <p className="text-start mt-2 info-text">
+                Welcome to the E-commerce Website—a modern and user-friendly
+                online shopping platform designed to provide a seamless and
+                secure shopping experience. This project showcases a
+                comprehensive e-commerce solution where users can browse
+                products, access detailed information, and manage their shopping
+                activities. A unique feature of this platform is the integration
+                of Google Authentication, which enables users to sign up and log
+                in to access the shopping functionality. The site is designed to
+                be fully responsive, ensuring a smooth shopping experience on
+                desktops, tablets, and mobile phones.
+              </p>
+              <h5 className="text-start skill-text">
+                Main skill used: React.js , Bootstrap , Google Auth
+              </h5>
+              <a
+                href="https://my-app-auth-e-commerce-one.vercel.app/"
+                target="_blank"
+                className="project-btns text-start btn41-43 btn-42"
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  width: "120px",
+                }}
+              >
+                View Project
+              </a>
+            </animated.div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
